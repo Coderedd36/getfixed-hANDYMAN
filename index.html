@@ -479,7 +479,7 @@
         <form class="booking-form" action="https://formsubmit.co/codyhigginbotham685@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="New Booking Request - GetFixed">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://get-fix-ed.netlify.app/thanks.html">
+          <input type="hidden" name="_next" value="https://get-fix-d.com/thanks.html">
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" required placeholder="John Smith">
@@ -573,5 +573,26 @@
     // Set minimum date to today
     document.getElementById('date').min = new Date().toISOString().split('T')[0];
   </script>
+
+<script>
+document.querySelector('form.booking-form')?.addEventListener('submit', async (e) => {
+  const data = Object.fromEntries(new FormData(e.target).entries());
+  try {
+    await fetch('https://ingest.get-fix-d.com/ingest/site-lead', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: data.name || '',
+        email: data.email || '',
+        phone: data.phone || '',
+        service: data.service || '',
+        message: data.message || '',
+        source: 'get-fix-d.com',
+      }),
+    });
+  } catch (_) {}
+});
+</script>
 </body>
 </html>
