@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GetFixed Handyman - Home Repair & Services</title>
+  <title>fixd — El Paso Handyman Services | TV Mounts, IKEA, Fans & More</title>
+  <meta name="description" content="Local El Paso handyman. TV mounting, furniture assembly, ceiling fans, drywall, paint. Same-day or next-day. Free estimates. Call or text.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -15,31 +16,69 @@
     }
 
     :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --text: #1f2937;
-      --text-light: #6b7280;
-      --bg: #f9fafb;
-      --white: #ffffff;
+      /* Purple + black palette */
+      --purple-50:  #f5f3ff;
+      --purple-100: #ede9fe;
+      --purple-300: #c4b5fd;
+      --purple-400: #a78bfa;
+      --purple-500: #8b5cf6;
+      --purple-600: #7c3aed;   /* primary */
+      --purple-700: #6d28d9;
+      --purple-800: #5b21b6;
+      --purple-900: #4c1d95;
+
+      --black:      #0a0a0a;
+      --gray-950:   #0f0f10;
+      --gray-900:   #18181b;
+      --gray-800:   #27272a;
+      --gray-700:   #3f3f46;
+      --gray-500:   #71717a;
+      --gray-400:   #a1a1aa;
+      --gray-300:   #d4d4d8;
+      --gray-200:   #e4e4e7;
+      --gray-100:   #f4f4f5;
+      --white:      #ffffff;
+
+      --bg:         #ffffff;
+      --ink:        #0a0a0a;
+      --ink-soft:   #52525b;
+      --border:     #e4e4e7;
+
+      --radius-sm:  6px;
+      --radius:     10px;
+      --radius-lg:  16px;
+      --radius-xl:  24px;
+
+      --shadow-sm:  0 1px 2px rgba(10,10,10,0.04);
+      --shadow:     0 4px 16px rgba(10,10,10,0.06), 0 1px 2px rgba(10,10,10,0.04);
+      --shadow-lg:  0 12px 40px rgba(10,10,10,0.10), 0 2px 6px rgba(10,10,10,0.05);
+      --shadow-purple: 0 8px 32px rgba(124,58,237,0.25);
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
       line-height: 1.6;
       background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "cv11", "ss01";
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
-    /* Header */
+    /* =================== HEADER =================== */
     header {
-      background: var(--white);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -53,268 +92,493 @@
     }
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-mark {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--purple-600) 0%, var(--purple-800) 100%);
+      border-radius: 8px;
+      position: relative;
+    }
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      background: var(--white);
+      border-radius: 3px;
+      mask: linear-gradient(135deg, transparent 30%, black 30%, black 70%, transparent 70%);
     }
 
     .logo span {
-      color: var(--text);
+      color: var(--purple-600);
     }
 
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 36px;
       list-style: none;
     }
 
     .nav-links a {
-      color: var(--text-light);
+      color: var(--ink-soft);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.2s;
+      font-size: 0.95rem;
+      transition: color 0.15s ease;
     }
 
     .nav-links a:hover {
-      color: var(--primary);
+      color: var(--purple-600);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-phone {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .nav-phone { display: inline; }
     }
 
     .cta-btn {
-      background: var(--primary);
+      background: var(--purple-600);
       color: var(--white);
       padding: 10px 20px;
-      border-radius: 8px;
+      border-radius: var(--radius);
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.2s;
+      font-size: 0.95rem;
+      transition: all 0.15s ease;
+      box-shadow: var(--shadow-sm);
     }
 
     .cta-btn:hover {
-      background: var(--primary-dark);
+      background: var(--purple-700);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-purple);
     }
 
-    /* Hero */
+    /* =================== HERO =================== */
     .hero {
-      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(124,58,237,0.35) 0%, transparent 60%),
+        linear-gradient(180deg, var(--black) 0%, var(--gray-900) 100%);
       color: var(--white);
-      padding: 80px 0;
+      padding: 100px 0 120px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 800px 400px at 50% 30%, black, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 800px 400px at 50% 30%, black, transparent 80%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
       text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.35);
+      color: var(--purple-300);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .hero-eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--purple-400);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--purple-400);
     }
 
     .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      line-height: 1.2;
+      font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .accent {
+      background: linear-gradient(135deg, var(--purple-300) 0%, var(--purple-500) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      font-size: 1.25rem;
-      opacity: 0.9;
-      margin-bottom: 32px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1.125rem;
+      color: var(--gray-300);
+      max-width: 540px;
+      margin: 0 auto 36px;
     }
 
     .hero-btns {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 14px 28px;
-      border-radius: 8px;
+      border-radius: var(--radius);
       font-weight: 600;
+      font-size: 1rem;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: all 0.15s ease;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
     }
 
     .btn-primary {
-      background: var(--white);
-      color: var(--primary);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .btn-outline {
-      border: 2px solid var(--white);
+      background: var(--purple-600);
       color: var(--white);
     }
 
+    .btn-primary:hover {
+      background: var(--purple-500);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-purple);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--gray-700);
+    }
+
     .btn-outline:hover {
-      background: var(--white);
-      color: var(--primary);
+      background: var(--gray-800);
+      border-color: var(--gray-600);
+      transform: translateY(-2px);
     }
 
-    /* Services */
-    .services {
-      padding: 80px 0;
+    /* =================== TRUST BAR =================== */
+    .trust {
       background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0;
     }
 
-    .section-title {
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px 56px;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .trust-icon {
+      width: 18px;
+      height: 18px;
+      color: var(--purple-600);
+    }
+
+    /* =================== SECTIONS =================== */
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-header {
       text-align: center;
-      margin-bottom: 48px;
+      max-width: 640px;
+      margin: 0 auto 64px;
     }
 
-    .section-title h2 {
-      font-size: 2.25rem;
+    .section-eyebrow {
+      color: var(--purple-600);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       margin-bottom: 12px;
     }
 
-    .section-title p {
-      color: var(--text-light);
-      max-width: 500px;
-      margin: 0 auto;
+    .section h2 {
+      font-size: clamp(1.875rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+
+    /* =================== SERVICES =================== */
+    .services {
+      background: var(--gray-100);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      gap: 20px;
     }
 
     .service-card {
+      background: var(--white);
       padding: 32px;
-      border-radius: 12px;
-      background: var(--bg);
-      transition: transform 0.2s, box-shadow 0.2s;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple-600) 0%, var(--purple-400) 100%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
     }
 
     .service-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--purple-300);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
     }
 
     .service-icon {
       width: 48px;
       height: 48px;
-      background: #dbeafe;
-      border-radius: 10px;
+      background: linear-gradient(135deg, var(--purple-100) 0%, var(--purple-50) 100%);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      border: 1px solid var(--purple-100);
     }
 
     .service-card h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
       margin-bottom: 8px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
     }
 
     .service-card p {
-      color: var(--text-light);
+      color: var(--ink-soft);
       font-size: 0.95rem;
     }
 
-    /* Booking Section */
+    /* =================== BOOKING =================== */
     .booking {
-      padding: 80px 0;
-      background: var(--bg);
+      background: var(--white);
     }
 
     .booking-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 64px;
       align-items: start;
     }
 
     .booking-info h2 {
-      font-size: 2rem;
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
       margin-bottom: 16px;
+      color: var(--ink);
     }
 
     .booking-info > p {
-      color: var(--text-light);
-      margin-bottom: 24px;
+      color: var(--ink-soft);
+      margin-bottom: 32px;
+      font-size: 1.05rem;
     }
 
     .features-list {
       list-style: none;
+      display: grid;
+      gap: 14px;
     }
 
     .features-list li {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 12px;
-      margin-bottom: 12px;
+      font-size: 0.95rem;
     }
 
     .check {
-      color: #10b981;
-      font-weight: bold;
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: var(--purple-100);
+      color: var(--purple-700);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
     }
 
+    /* form */
     .booking-form {
       background: var(--white);
-      padding: 32px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      padding: 36px;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
     }
 
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
 
     .form-group label {
       display: block;
       font-weight: 600;
+      font-size: 0.875rem;
       margin-bottom: 6px;
+      color: var(--ink);
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 12px 16px;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      font-size: 1rem;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.95rem;
       font-family: inherit;
-      transition: border-color 0.2s;
+      color: var(--ink);
+      background: var(--white);
+      transition: all 0.15s ease;
+    }
+
+    .form-group input:hover,
+    .form-group select:hover,
+    .form-group textarea:hover {
+      border-color: var(--gray-300);
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--primary);
+      border-color: var(--purple-500);
+      box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
     }
 
     .form-group textarea {
       resize: vertical;
-      min-height: 100px;
+      min-height: 110px;
     }
 
     .submit-btn {
       width: 100%;
-      padding: 14px;
-      background: var(--primary);
+      padding: 14px 20px;
+      background: var(--purple-600);
       color: var(--white);
-      border: none;
-      border-radius: 8px;
+      border: 0;
+      border-radius: var(--radius);
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: all 0.15s ease;
+      margin-top: 6px;
+      font-family: inherit;
     }
 
     .submit-btn:hover {
-      background: var(--primary-dark);
+      background: var(--purple-700);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-purple);
     }
 
-    /* Reviews */
+    .form-fineprint {
+      text-align: center;
+      margin-top: 14px;
+      color: var(--ink-soft);
+      font-size: 0.85rem;
+    }
+
+    /* =================== REVIEWS =================== */
     .reviews {
-      padding: 80px 0;
-      background: var(--white);
+      background: var(--gray-100);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .reviews-grid {
@@ -324,75 +588,124 @@
     }
 
     .review-card {
-      padding: 24px;
-      border-radius: 12px;
-      background: var(--bg);
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      border: 1px solid var(--border);
     }
 
     .review-stars {
-      color: #fbbf24;
-      margin-bottom: 12px;
+      color: #f59e0b;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+      font-size: 1.05rem;
     }
 
     .review-text {
-      color: var(--text-light);
-      margin-bottom: 16px;
+      color: var(--ink);
+      margin-bottom: 18px;
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     .review-author {
       font-weight: 600;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
     }
 
-    /* Footer */
-    footer {
-      background: #1f2937;
+    /* =================== CTA STRIP =================== */
+    .cta-strip {
+      background:
+        radial-gradient(800px 400px at 50% 50%, rgba(124,58,237,0.4) 0%, transparent 70%),
+        var(--black);
       color: var(--white);
-      padding: 48px 0 24px;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+
+    .cta-strip p {
+      color: var(--gray-300);
+      font-size: 1.1rem;
+      max-width: 540px;
+      margin: 0 auto 32px;
+    }
+
+    /* =================== FOOTER =================== */
+    footer {
+      background: var(--gray-950);
+      color: var(--gray-400);
+      padding: 56px 0 28px;
+      border-top: 1px solid var(--gray-800);
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 32px;
-      margin-bottom: 32px;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
     }
 
     .footer-col h4 {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       margin-bottom: 16px;
     }
 
+    .footer-brand p {
+      color: var(--gray-400);
+      font-size: 0.95rem;
+      max-width: 320px;
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+
     .footer-col a {
-      color: #9ca3af;
+      color: var(--gray-400);
       text-decoration: none;
       display: block;
-      margin-bottom: 8px;
-      transition: color 0.2s;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      transition: color 0.15s ease;
     }
 
     .footer-col a:hover {
-      color: var(--white);
+      color: var(--purple-400);
     }
 
     .footer-bottom {
-      border-top: 1px solid #374151;
+      border-top: 1px solid var(--gray-800);
       padding-top: 24px;
-      text-align: center;
-      color: #9ca3af;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--gray-500);
+      font-size: 0.85rem;
     }
 
-    /* Mobile */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .booking-wrapper {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-links {
-        display: none;
-      }
+    /* =================== MOBILE =================== */
+    @media (max-width: 900px) {
+      .booking-wrapper { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 64px 0; }
+      .hero { padding: 64px 0 80px; }
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -400,130 +713,185 @@
   <header>
     <div class="container">
       <nav>
-        <a href="#" class="logo">Get<span>Fixed</span></a>
+        <a href="#" class="logo">
+          <span class="logo-mark" aria-hidden="true"></span>
+          fix<span>d</span>
+        </a>
         <ul class="nav-links">
           <li><a href="#services">Services</a></li>
-          <li><a href="#booking">Book Now</a></li>
+          <li><a href="#booking">Book</a></li>
           <li><a href="#reviews">Reviews</a></li>
         </ul>
-        <a href="#booking" class="cta-btn">Get Started</a>
+        <div class="nav-cta">
+          <a href="tel:9158736686" class="nav-phone">(915) 873-6686</a>
+          <a href="#booking" class="cta-btn">Get a quote</a>
+        </div>
       </nav>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
-      <h1>Your Home, Our Priority<br>Expert Handyman Services</h1>
-      <p>Fast, reliable, and affordable handyman services. From minor repairs to major renovations — we handle it all.</p>
-      <div class="hero-btns">
-        <a href="#booking" class="btn btn-primary">Book Now</a>
-        <a href="#services" class="btn btn-outline">Our Services</a>
+      <div class="hero-inner">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          Now booking in El Paso · Horizon · Socorro
+        </div>
+        <h1>Local handyman.<br><span class="accent">Same-day service.</span></h1>
+        <p>TV mounting, IKEA assembly, ceiling fans, drywall, paint, doors, faucets, light fixtures, shelves — and the random stuff on your honey-do list.</p>
+        <div class="hero-btns">
+          <a href="#booking" class="btn btn-primary">Book now →</a>
+          <a href="tel:9158736686" class="btn btn-outline">Call (915) 873-6686</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="services" class="services">
+  <section class="trust">
     <div class="container">
-      <div class="section-title">
-        <h2>Our Services</h2>
-        <p>Quality craftsmanship for every job, big or small</p>
+      <div class="trust-row">
+        <span class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.5 5.5L18 7l-4 4 1 6-5-2.5L5 17l1-6-4-4 5.5-.5z"/></svg>
+          Insured & bonded
+        </span>
+        <span class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5.25c0 .2.08.39.22.53l3 3a.75.75 0 101.06-1.06L10.75 9.94V5z" clip-rule="evenodd"/></svg>
+          Same-day or next-day
+        </span>
+        <span class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+          Free estimates
+        </span>
+        <span class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M3.5 2.75a.75.75 0 00-1.5 0v14.5a.75.75 0 001.5 0v-4.392l1.657-.348a6.449 6.449 0 014.271.572 7.948 7.948 0 005.965.524l2.078-.64A.75.75 0 0018 12.25v-8.5a.75.75 0 00-.904-.734l-2.38.501a7.25 7.25 0 01-4.186-.363l-.502-.2a8.75 8.75 0 00-5.053-.439l-1.475.31V2.75z"/></svg>
+          El Paso owned
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Services</div>
+        <h2>What I do</h2>
+        <p class="section-subtitle">The jobs that pile up. The ones you've been putting off for three months. Knock them all out in one visit.</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">🔧</div>
-          <h3>General Repairs</h3>
-          <p>Fixing broken doors, windows, cabinets, and everything in between.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🚰</div>
-          <h3>Plumbing</h3>
-          <p>Leak repairs, faucet replacements, and minor pipe work.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">💡</div>
-          <h3>Electrical</h3>
-          <p>Light fixture installation, outlet repairs, and wiring fixes.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🎨</div>
-          <h3>Painting</h3>
-          <p>Interior and exterior painting, drywall repair, and touch-ups.</p>
+          <div class="service-icon">📺</div>
+          <h3>TV Mounting</h3>
+          <p>Wall-mount on drywall, brick, or above a fireplace. Cables hidden. Most jobs $120–$250.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">🪑</div>
           <h3>Furniture Assembly</h3>
-          <p>Quick and accurate assembly of IKEA and other furniture.</p>
+          <p>IKEA, Wayfair, Amazon. Done in your home, tools included. Most jobs $70–$150.</p>
         </div>
         <div class="service-card">
-          <div class="service-icon">🏠</div>
-          <h3>Home Improvement</h3>
-          <p>Upgrades, installations, and custom projects around your home.</p>
+          <div class="service-icon">🌀</div>
+          <h3>Ceiling Fans</h3>
+          <p>Install a new fan or replace a wobbler. Wiring, mounting, balancing. $150–$300.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>Painting & Drywall</h3>
+          <p>Touch-ups, full rooms, drywall patches. Texture-matched, primed, ready to paint.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚰</div>
+          <h3>Plumbing Fixes</h3>
+          <p>Faucets, toilets, showerheads, leak repairs. Small jobs only, no major re-pipes.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💡</div>
+          <h3>Electrical</h3>
+          <p>Light fixtures, outlets, switches, dimmers. Small electrical, no panel work.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚪</div>
+          <h3>Doors & Locks</h3>
+          <p>Sticking doors, new knobs and deadbolts, weatherstripping, bi-fold adjustments.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Honey-do Lists</h3>
+          <p>Shelves, hooks, baby gates, weatherstrip, caulking. The random stuff. $60/hr.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="booking" class="booking">
+  <section id="booking" class="section booking">
     <div class="container">
       <div class="booking-wrapper">
         <div class="booking-info">
-          <h2>Book Your Service</h2>
-          <p>Fill out the form and we'll get back to you within 24 hours to confirm your appointment.</p>
+          <h2>Tell me what you need.</h2>
+          <p>I usually reply within an hour during the day. Free estimates. No trip charge for jobs in El Paso, Horizon, or Socorro.</p>
           <ul class="features-list">
-            <li><span class="check">✓</span> Free estimate</li>
-            <li><span class="check">✓</span> Flexible scheduling</li>
-            <li><span class="check">✓</span> Insured & bonded</li>
-            <li><span class="check">✓</span> Satisfaction guaranteed</li>
+            <li><span class="check">✓</span> Text or call — same-day or next-day</li>
+            <li><span class="check">✓</span> Upfront per-job pricing, no surprises</li>
+            <li><span class="check">✓</span> I show up when I say I will</li>
+            <li><span class="check">✓</span> I clean up after the job</li>
+            <li><span class="check">✓</span> Insured — your home is protected</li>
           </ul>
         </div>
         <form class="booking-form" action="https://formsubmit.co/codyhigginbotham685@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New Booking Request - GetFixed">
+          <input type="hidden" name="_subject" value="New Booking Request - fixd">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value="https://get-fix-d.com/thanks.html">
           <div class="form-group">
-            <label for="name">Full Name</label>
+            <label for="name">Your name</label>
             <input type="text" id="name" name="name" required placeholder="John Smith">
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="john@example.com">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="you@email.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required placeholder="(915) 873-6686">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="">Select...</option>
+                <option value="TV Mounting">TV Mounting</option>
+                <option value="Furniture Assembly">Furniture Assembly</option>
+                <option value="Ceiling Fan">Ceiling Fan</option>
+                <option value="Painting / Drywall">Painting / Drywall</option>
+                <option value="Plumbing">Plumbing</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Doors / Locks">Doors / Locks</option>
+                <option value="Honey-do list">Honey-do list</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="date">Preferred date</label>
+              <input type="date" id="date" name="date" required>
+            </div>
           </div>
           <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+            <label for="message">Tell me about the job</label>
+            <textarea id="message" name="message" placeholder="65-inch TV, drywall mount, no existing bracket. Need it done this weekend if possible."></textarea>
           </div>
-          <div class="form-group">
-            <label for="service">Service Needed</label>
-            <select id="service" name="service" required>
-              <option value="">Select a service</option>
-              <option value="General Repairs">General Repairs</option>
-              <option value="Plumbing">Plumbing</option>
-              <option value="Electrical">Electrical</option>
-              <option value="Painting">Painting</option>
-              <option value="Furniture Assembly">Furniture Assembly</option>
-              <option value="Home Improvement">Home Improvement</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="date">Preferred Date</label>
-            <input type="date" id="date" name="date" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Describe the Issue</label>
-            <textarea id="message" name="message" placeholder="Tell us about what needs to be fixed..."></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Submit Request</button>
+          <button type="submit" class="submit-btn">Send request</button>
+          <p class="form-fineprint">No spam. Just a quote.</p>
         </form>
       </div>
     </div>
   </section>
 
-  <section id="reviews" class="reviews">
+  <section id="reviews" class="section reviews">
     <div class="container">
-      <div class="section-title">
-        <h2>What Our Clients Say</h2>
-        <p>Trusted by homeowners across the area</p>
+      <div class="section-header">
+        <div class="section-eyebrow">Reviews</div>
+        <h2>What homeowners say</h2>
+        <p class="section-subtitle">Real customers. Real jobs. Real El Paso.</p>
       </div>
       <div class="reviews-grid">
         <div class="review-card">
@@ -545,26 +913,51 @@
     </div>
   </section>
 
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Ready to knock out the honey-do list?</h2>
+      <p>Same-day or next-day appointments. Text or call — I'll usually get back to you within the hour.</p>
+      <div class="hero-btns">
+        <a href="tel:9158736686" class="btn btn-primary">Call (915) 873-6686</a>
+        <a href="#booking" class="btn btn-outline">Send a request</a>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-col">
-          <h4>GetFixed</h4>
-          <p style="color: #9ca3af;">Your trusted local handyman for all home repair needs.</p>
+        <div class="footer-col footer-brand">
+          <a href="#" class="logo" style="margin-bottom: 0;">
+            <span class="logo-mark" aria-hidden="true"></span>
+            fix<span>d</span>
+          </a>
+          <p>Local handyman service in El Paso, Texas. TV mounts, IKEA assembly, fans, drywall, paint, doors — the jobs that pile up.</p>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="#services">Services</a>
+          <h4>Services</h4>
+          <a href="#services">TV Mounting</a>
+          <a href="#services">Furniture Assembly</a>
+          <a href="#services">Ceiling Fans</a>
+          <a href="#services">Painting & Drywall</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
           <a href="#booking">Book Now</a>
           <a href="#reviews">Reviews</a>
+          <a href="tel:9158736686">(915) 873-6686</a>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
-          <p style="color: #9ca3af;">Email: codyhigginbotham685@gmail.com</p>
+          <h4>Service Area</h4>
+          <a href="#">El Paso</a>
+          <a href="#">Horizon City</a>
+          <a href="#">Socorro</a>
+          <a href="#">Canutillo</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 GetFixed Handyman Services. All rights reserved.</p>
+        <span>© 2026 fixd. All rights reserved.</span>
+        <span>Insured · El Paso, TX</span>
       </div>
     </div>
   </footer>
@@ -572,27 +965,28 @@
   <script>
     // Set minimum date to today
     document.getElementById('date').min = new Date().toISOString().split('T')[0];
-  </script>
 
-<script>
-document.querySelector('form.booking-form')?.addEventListener('submit', async (e) => {
-  const data = Object.fromEntries(new FormData(e.target).entries());
-  try {
-    await fetch('https://ingest.get-fix-d.com/ingest/site-lead', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: data.name || '',
-        email: data.email || '',
-        phone: data.phone || '',
-        service: data.service || '',
-        message: data.message || '',
-        source: 'get-fix-d.com',
-      }),
+    // Mirror to lead-finder pipeline (in addition to FormSubmit email).
+    // Same pattern as before: fire-and-forget POST so the customer still
+    // gets the FormSubmit redirect to /thanks.html.
+    document.querySelector('form.booking-form')?.addEventListener('submit', async (e) => {
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      try {
+        await fetch('https://ingest.get-fix-d.com/ingest/site-lead', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: data.name || '',
+            email: data.email || '',
+            phone: data.phone || '',
+            service: data.service || '',
+            message: data.message || '',
+            source: 'get-fix-d.com',
+          }),
+        });
+      } catch (_) {}
     });
-  } catch (_) {}
-});
-</script>
+  </script>
 </body>
 </html>
