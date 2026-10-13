@@ -181,6 +181,16 @@
     .review-card blockquote { font-size: 1rem; color: var(--ink); flex: 1; }
     .review-card cite { font-style: normal; font-size: .88rem; font-weight: 600; color: var(--ink-faint); }
 
+    /* ---------- Recent work ---------- */
+    .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .work-card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; display: flex; flex-direction: column;
+    }
+    .work-card img { width: 100%; height: 260px; object-fit: cover; display: block; }
+    .work-card .work-cap { padding: 18px 20px; font-size: .95rem; color: var(--ink-soft); }
+    .work-card .work-cap strong { display: block; color: var(--ink); font-size: 1rem; margin-bottom: 4px; }
+
     /* ---------- Booking ---------- */
     .booking-wrap {
       display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start;
@@ -283,6 +293,8 @@
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .steps { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
+      .work-grid { grid-template-columns: 1fr; }
+      .work-card img { height: 220px; }
       .booking-wrap { grid-template-columns: 1fr; padding: 36px 24px; gap: 36px; }
       .nav-links a:not(.btn) { display: none; }
       .section { padding: 64px 0; }
@@ -484,6 +496,83 @@
             <div class="stars">★★★★★</div>
             <blockquote>"Assembled our IKEA furniture perfectly. Saved us so much time and frustration!"</blockquote>
             <cite>— Jennifer L.</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT WORK -->
+    <section id="work" class="section section-soft">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker">Recent work</div>
+          <h2>See the difference</h2>
+          <p>Real jobs from around El Paso. More photos added as the work rolls in.</p>
+        </div>
+        <div class="work-grid">
+          <div class="work-card reveal">
+            <img src="images/yard-cleanup-1.jpg" alt="Overgrown front yard in El Paso before cleanup" loading="lazy">
+            <div class="work-cap"><strong>Yard cleanup</strong>Overgrown front yard, cut back and cleared.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/tv-mount-1.jpg" alt="Large flat-screen TV wall-mounted above a media console" loading="lazy">
+            <div class="work-cap"><strong>TV wall mounting</strong>Big screen mounted clean and level.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/tv-mount-2.jpg" alt="TV mounted on a living room wall" loading="lazy">
+            <div class="work-cap"><strong>TV wall mounting</strong>Flush mount, wires tucked away.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/tv-mount-3.jpg" alt="TV mounted on a bedroom wall in El Paso" loading="lazy">
+            <div class="work-cap"><strong>TV wall mounting</strong>Secure mount on any wall type.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/assembly-dome.jpg" alt="Colorful climbing dome assembled in a backyard" loading="lazy">
+            <div class="work-cap"><strong>Assembly</strong>Climbing dome put together.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/assembly-trampoline.jpg" alt="Trampoline with safety net assembled in a backyard" loading="lazy">
+            <div class="work-cap"><strong>Assembly</strong>Trampoline with safety enclosure.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/assembly-swingset.jpg" alt="Wooden swing set with slide assembled" loading="lazy">
+            <div class="work-cap"><strong>Assembly</strong>Swing set with slide, built start to finish.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/assembly-patio.jpg" alt="Patio furniture set assembled outdoors" loading="lazy">
+            <div class="work-cap"><strong>Assembly</strong>Patio furniture set, ready to enjoy.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/assembly-island.jpg" alt="White kitchen island cabinet assembled" loading="lazy">
+            <div class="work-cap"><strong>Assembly</strong>Kitchen island built and placed.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/gazebo.jpg" alt="Black metal gazebo assembled on a patio" loading="lazy">
+            <div class="work-cap"><strong>Gazebo assembly</strong>Full gazebo build, anchored and finished.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/fan-1.jpg" alt="Ceiling fan with light installed" loading="lazy">
+            <div class="work-cap"><strong>Ceiling fan install</strong>Fan and light wired and hung.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/fan-2.jpg" alt="Rustic ceiling fan with caged light installed" loading="lazy">
+            <div class="work-cap"><strong>Ceiling fan install</strong>Replacement fan, balanced and quiet.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/light-1.jpg" alt="Flush-mount ceiling light installed" loading="lazy">
+            <div class="work-cap"><strong>Light fixture install</strong>New ceiling light, bright and even.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/fireplace-mount.jpg" alt="Electric fireplace mounted on a living room wall" loading="lazy">
+            <div class="work-cap"><strong>Wall mounting</strong>Electric fireplace mounted and leveled.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/yard-before-2.jpg" alt="Overgrown grassy yard before cleanup" loading="lazy">
+            <div class="work-cap"><strong>Yard cleanup</strong>Tall weeds and grass, cut down.</div>
+          </div>
+          <div class="work-card reveal">
+            <img src="images/yard-after-1.jpg" alt="Yard after mowing and cleanup" loading="lazy">
+            <div class="work-cap"><strong>Yard cleanup</strong>Mowed, edged, and tidied up.</div>
           </div>
         </div>
       </div>
