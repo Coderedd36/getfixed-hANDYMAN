@@ -190,6 +190,8 @@
     .work-card img { width: 100%; height: 260px; object-fit: cover; display: block; }
     .work-card .work-cap { padding: 18px 20px; font-size: .95rem; color: var(--ink-soft); }
     .work-card .work-cap strong { display: block; color: var(--ink); font-size: 1rem; margin-bottom: 4px; }
+    .work-img { position: relative; }
+    .ba-badge { position: absolute; top: 12px; left: 12px; background: rgba(17,24,39,.8); color: #fff; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; }
 
     /* ---------- Booking ---------- */
     .booking-wrap {
@@ -511,10 +513,6 @@
         </div>
         <div class="work-grid">
           <div class="work-card reveal">
-            <img data-b64="images/yard-cleanup-1.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Overgrown front yard in El Paso before cleanup" loading="lazy">
-            <div class="work-cap"><strong>Yard cleanup</strong>Overgrown front yard, cut back and cleared.</div>
-          </div>
-          <div class="work-card reveal">
             <img data-b64="images/tv-mount-1.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Large flat-screen TV wall-mounted above a media console" loading="lazy">
             <div class="work-cap"><strong>TV wall mounting</strong>Big screen mounted clean and level.</div>
           </div>
@@ -567,11 +565,11 @@
             <div class="work-cap"><strong>Wall mounting</strong>Electric fireplace mounted and leveled.</div>
           </div>
           <div class="work-card reveal">
-            <img data-b64="images/yard-before-2.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Overgrown grassy yard before cleanup" loading="lazy">
-            <div class="work-cap"><strong>Yard cleanup</strong>Tall weeds and grass, cut down.</div>
+            <div class="work-img"><span class="ba-badge">Before</span><img data-b64="images/yard-before-2.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Overgrown grassy yard before cleanup" loading="lazy"></div>
+            <div class="work-cap"><strong>Yard cleanup</strong>Overgrown weeds and tall grass.</div>
           </div>
           <div class="work-card reveal">
-            <img data-b64="images/yard-after-1.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Yard after mowing and cleanup" loading="lazy">
+            <div class="work-img"><span class="ba-badge">After</span><img data-b64="images/yard-after-1.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Yard after mowing and cleanup" loading="lazy"></div>
             <div class="work-cap"><strong>Yard cleanup</strong>Mowed, edged, and tidied up.</div>
           </div>
         </div>
