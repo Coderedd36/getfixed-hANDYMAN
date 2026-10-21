@@ -48,6 +48,14 @@
     .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
     img { max-width: 100%; }
 
+    /* ---------- Promo banner ---------- */
+    .promo-banner { background: linear-gradient(120deg, var(--primary-ink), var(--primary-dark)); color: #fff; }
+    .promo-banner-inner { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 12px 20px; flex-wrap: wrap; text-align: center; }
+    .promo-text { margin: 0; font-size: .95rem; }
+    .promo-text strong { font-weight: 800; }
+    .promo-banner .btn { background: #fff; color: var(--primary-ink); box-shadow: none; }
+    .promo-banner .btn:hover { background: var(--primary-50); transform: translateY(-1px); }
+
     /* ---------- Header ---------- */
     header {
       position: sticky; top: 0; z-index: 100;
@@ -333,6 +341,14 @@
       </nav>
     </div>
   </header>
+  <!-- PROMO BANNER -->
+  <div class="promo-banner">
+    <div class="container promo-banner-inner">
+      <p class="promo-text"><strong>🍂 Mid-Month Fall Deal</strong> — Yard cleanup from $80 · Holiday lights $60/hr · Handyman $60/hr · <strong>Book any two, save $20</strong> · Ends Oct 31</p>
+      <a class="btn btn-primary btn-sm" href="#booking">Claim the deal</a>
+    </div>
+  </div>
+
 
   <main id="top">
     <!-- HERO -->
